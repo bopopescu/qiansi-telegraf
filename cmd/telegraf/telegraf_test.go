@@ -1,4 +1,4 @@
-package telegraf
+package main
 
 import (
 	"fmt"
@@ -12,4 +12,8 @@ func TestStartX(t *testing.T) {
 	fmt.Printf("\n ============== 重启 ============== \n")
 	Restart()
 	select {}
+}
+
+func TestStart(t *testing.T) {
+	Start()
 }

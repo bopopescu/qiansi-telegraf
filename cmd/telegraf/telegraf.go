@@ -5,12 +5,12 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	"github.com/kardianos/service"
 	"log"
 	"net/http"
 	_ "net/http/pprof" // Comment this line to disable pprof endpoint.
 	"os"
 	"os/signal"
+	"runtime"
 	"sort"
 	"strings"
 	"syscall"
@@ -363,69 +363,28 @@ func main() {
 	)
 }
 
-type program struct {
-	inputFilters      []string
-	outputFilters     []string
-	aggregatorFilters []string
-	processorFilters  []string
-}
-
-func (p *program) Start(s service.Service) error {
-	go reloadLoop(p.inputFilters, p.outputFilters, p.aggregatorFilters, p.processorFilters)
-	return nil
-}
-func (p *program) Stop(s service.Service) error {
-	close(stopSignal)
-	return nil
-}
-
-func Restart() {
-	reloadSignal <- struct{}{}
-}
-
+func Restart() { reloadSignal <- struct{}{} }
 func Start() {
 	inputFilters, outputFilters, aggregatorFilters, processorFilters := []string{}, []string{}, []string{}, []string{}
 	logger.SetupLogging(logger.LogConfig{})
-	shortVersion := version
-	if shortVersion == "" {
-		shortVersion = "unknown"
-	}
 	// Configure version
-	if err := internal.SetVersion(shortVersion); err != nil {
+	if err := internal.SetVersion(version); err != nil {
 		log.Println("Telegraf version already configured to: " + internal.Version())
 	}
 	if runtime.GOOS == "windows" && windowsRunAsService() {
-		programFiles := os.Getenv("ProgramFiles")
-		if programFiles == "" { // Should never happen
-			programFiles = "C:\\Program Files"
-		}
-		svcConfig := &service.Config{
-			Name:        "telegraf",
-			DisplayName: "Telegraf Data Collector Service",
-			Description: "Collects data using a series of plugins and publishes it to another series of plugins.",
-			Arguments:   []string{"--config", programFiles + "\\Telegraf\\telegraf.conf"},
-		}
-		prg := &program{
-			inputFilters:      inputFilters,
-			outputFilters:     outputFilters,
-			aggregatorFilters: []string{},
-			processorFilters:  []string{},
-		}
-		s, err := service.New(prg, svcConfig)
-		if err != nil {
-			log.Fatal("E! " + err.Error())
-		}
-		winlogger, err := s.Logger(nil)
-		if err == nil {
-			//When in service mode, register eventlog target andd setup default logging to eventlog
-			logger.RegisterEventLogger(winlogger)
-			logger.SetupLogging(logger.LogConfig{LogTarget: logger.LogTargetEventlog})
-		}
-		err = s.Run()
-		if err != nil {
-			log.Println("E! " + err.Error())
-		}
+		runAsWindowsService(
+			inputFilters,
+			outputFilters,
+			aggregatorFilters,
+			processorFilters,
+		)
 	} else {
-		reloadLoop(inputFilters, outputFilters, aggregatorFilters, processorFilters)
+		stop = make(chan struct{})
+		reloadLoop(
+			inputFilters,
+			outputFilters,
+			aggregatorFilters,
+			processorFilters,
+		)
 	}
 }

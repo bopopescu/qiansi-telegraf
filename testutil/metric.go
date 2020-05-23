@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/metric"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/metric"
 )
 
 type metricDiff struct {

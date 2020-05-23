@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/metric"
 	"github.com/google/go-cmp/cmp"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/metric"
 )
 
 func TestRequireMetricEqual(t *testing.T) {
