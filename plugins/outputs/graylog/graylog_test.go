@@ -9,7 +9,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/influxdata/telegraf/testutil"
+	"gitee.com/zhimiao/qiansi-telegraf/testutil"
 	"github.com/stretchr/testify/assert"
 )
 

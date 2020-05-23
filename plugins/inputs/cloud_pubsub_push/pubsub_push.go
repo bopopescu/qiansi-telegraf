@@ -11,11 +11,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/internal"
-	tlsint "github.com/influxdata/telegraf/internal/tls"
-	"github.com/influxdata/telegraf/plugins/inputs"
-	"github.com/influxdata/telegraf/plugins/parsers"
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/internal"
+	tlsint "gitee.com/zhimiao/qiansi-telegraf/internal/tls"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/parsers"
 )
 
 // defaultMaxBodySize is the default maximum request body size, in bytes.
@@ -109,7 +109,7 @@ const sampleConfig = `
   ## Data format to consume.
   ## Each data format has its own unique set of configuration options, read
   ## more about them here:
-  ## https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md
+  ## https://gitee.com/zhimiao/qiansi-telegraf/blob/master/docs/DATA_FORMATS_INPUT.md
   data_format = "influx"
 `
 

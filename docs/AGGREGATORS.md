@@ -8,7 +8,7 @@ This section is for developers who want to create a new aggregator plugin.
 * Aggregators should call `aggregators.Add` in their `init` function to
   register themselves.  See below for a quick example.
 * To be available within Telegraf itself, plugins must add themselves to the
-  `github.com/influxdata/telegraf/plugins/aggregators/all/all.go` file.
+  `gitee.com/zhimiao/qiansi-telegraf/plugins/aggregators/all/all.go` file.
 - The `SampleConfig` function should return valid toml that describes how the
   plugin can be configured. This is included in `telegraf config`.  Please
   consult the [SampleConfig][] page for the latest style guidelines.
@@ -27,8 +27,8 @@ package min
 // min.go
 
 import (
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/plugins/aggregators"
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/aggregators"
 )
 
 type Min struct {
@@ -127,6 +127,6 @@ func init() {
 }
 ```
 
-[telegraf.Aggregator]: https://godoc.org/github.com/influxdata/telegraf#Aggregator
-[SampleConfig]: https://github.com/influxdata/telegraf/wiki/SampleConfig
-[CodeStyle]: https://github.com/influxdata/telegraf/wiki/CodeStyle
+[telegraf.Aggregator]: https://godoc.org/gitee.com/zhimiao/qiansi-telegraf#Aggregator
+[SampleConfig]: https://gitee.com/zhimiao/qiansi-telegraf/wiki/SampleConfig
+[CodeStyle]: https://gitee.com/zhimiao/qiansi-telegraf/wiki/CodeStyle

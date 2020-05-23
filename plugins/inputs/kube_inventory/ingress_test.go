@@ -4,10 +4,10 @@ import (
 	"testing"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf/testutil"
 	v1 "github.com/ericchiang/k8s/apis/core/v1"
 	v1beta1EXT "github.com/ericchiang/k8s/apis/extensions/v1beta1"
 	metav1 "github.com/ericchiang/k8s/apis/meta/v1"
-	"github.com/influxdata/telegraf/testutil"
 )
 
 func TestIngress(t *testing.T) {

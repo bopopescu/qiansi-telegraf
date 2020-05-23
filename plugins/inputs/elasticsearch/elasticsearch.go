@@ -11,11 +11,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/internal"
-	"github.com/influxdata/telegraf/internal/tls"
-	"github.com/influxdata/telegraf/plugins/inputs"
-	jsonparser "github.com/influxdata/telegraf/plugins/parsers/json"
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/internal"
+	"gitee.com/zhimiao/qiansi-telegraf/internal/tls"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs"
+	jsonparser "gitee.com/zhimiao/qiansi-telegraf/plugins/parsers/json"
 )
 
 // mask for masking username/password from error messages

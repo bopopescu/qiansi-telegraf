@@ -7,9 +7,9 @@ import (
 	"strings"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs"
 	"github.com/Azure/azure-storage-queue-go/azqueue"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/plugins/inputs"
 )
 
 type AzureStorageQueue struct {

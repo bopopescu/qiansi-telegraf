@@ -15,17 +15,17 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/influxdata/telegraf/agent"
-	"github.com/influxdata/telegraf/config"
-	"github.com/influxdata/telegraf/internal"
-	"github.com/influxdata/telegraf/internal/goplugin"
-	"github.com/influxdata/telegraf/logger"
-	_ "github.com/influxdata/telegraf/plugins/aggregators/all"
-	"github.com/influxdata/telegraf/plugins/inputs"
-	_ "github.com/influxdata/telegraf/plugins/inputs/all"
-	"github.com/influxdata/telegraf/plugins/outputs"
-	_ "github.com/influxdata/telegraf/plugins/outputs/all"
-	_ "github.com/influxdata/telegraf/plugins/processors/all"
+	"gitee.com/zhimiao/qiansi-telegraf/agent"
+	"gitee.com/zhimiao/qiansi-telegraf/config"
+	"gitee.com/zhimiao/qiansi-telegraf/internal"
+	"gitee.com/zhimiao/qiansi-telegraf/internal/goplugin"
+	"gitee.com/zhimiao/qiansi-telegraf/logger"
+	_ "gitee.com/zhimiao/qiansi-telegraf/plugins/aggregators/all"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs"
+	_ "gitee.com/zhimiao/qiansi-telegraf/plugins/inputs/all"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/outputs"
+	_ "gitee.com/zhimiao/qiansi-telegraf/plugins/outputs/all"
+	_ "gitee.com/zhimiao/qiansi-telegraf/plugins/processors/all"
 )
 
 // If you update these, update usage.go and usage_windows.go

@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/influxdata/telegraf/testutil"
+	"gitee.com/zhimiao/qiansi-telegraf/testutil"
 )
 
 func postWebhooks(rb *RollbarWebhook, eventBody string) *httptest.ResponseRecorder {

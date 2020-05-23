@@ -8,11 +8,11 @@ import (
 	"sync"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/internal"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs"
+	"gitee.com/zhimiao/qiansi-telegraf/selfstat"
 	"github.com/google/go-github/github"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/internal"
-	"github.com/influxdata/telegraf/plugins/inputs"
-	"github.com/influxdata/telegraf/selfstat"
 	"golang.org/x/oauth2"
 )
 

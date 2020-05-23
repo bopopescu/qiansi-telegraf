@@ -8,7 +8,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/influxdata/telegraf/testutil"
+	"gitee.com/zhimiao/qiansi-telegraf/testutil"
 )
 
 func TestJolokia2_ClientAuthRequest(t *testing.T) {

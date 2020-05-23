@@ -8,9 +8,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/influxdata/telegraf"
-	tlsint "github.com/influxdata/telegraf/internal/tls"
-	"github.com/influxdata/telegraf/plugins/inputs"
+	"gitee.com/zhimiao/qiansi-telegraf"
+	tlsint "gitee.com/zhimiao/qiansi-telegraf/internal/tls"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs"
 
 	as "github.com/aerospike/aerospike-client-go"
 )

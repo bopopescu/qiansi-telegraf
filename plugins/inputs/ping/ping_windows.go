@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/influxdata/telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf"
 )
 
 func (p *Ping) pingToURL(u string, acc telegraf.Accumulator) {

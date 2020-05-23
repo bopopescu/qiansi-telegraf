@@ -7,7 +7,7 @@ import (
 	"io"
 	"testing"
 
-	"github.com/influxdata/telegraf/plugins/parsers/influx"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/parsers/influx"
 	"github.com/stretchr/testify/require"
 )
 

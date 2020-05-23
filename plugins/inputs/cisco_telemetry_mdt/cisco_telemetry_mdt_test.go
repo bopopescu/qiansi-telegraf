@@ -7,10 +7,10 @@ import (
 	"net"
 	"testing"
 
+	"gitee.com/zhimiao/qiansi-telegraf/testutil"
 	dialout "github.com/cisco-ie/nx-telemetry-proto/mdt_dialout"
 	telemetry "github.com/cisco-ie/nx-telemetry-proto/telemetry_bis"
 	"github.com/golang/protobuf/proto"
-	"github.com/influxdata/telegraf/testutil"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"
 )

@@ -8,8 +8,8 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/influxdata/telegraf/internal"
-	"github.com/influxdata/telegraf/internal/rotate"
+	"gitee.com/zhimiao/qiansi-telegraf/internal"
+	"gitee.com/zhimiao/qiansi-telegraf/internal/rotate"
 	"github.com/influxdata/wlog"
 )
 

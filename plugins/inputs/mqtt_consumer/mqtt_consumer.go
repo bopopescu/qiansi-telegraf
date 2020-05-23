@@ -7,12 +7,12 @@ import (
 	"strings"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/internal"
+	"gitee.com/zhimiao/qiansi-telegraf/internal/tls"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/parsers"
 	"github.com/eclipse/paho.mqtt.golang"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/internal"
-	"github.com/influxdata/telegraf/internal/tls"
-	"github.com/influxdata/telegraf/plugins/inputs"
-	"github.com/influxdata/telegraf/plugins/parsers"
 )
 
 var (
@@ -137,7 +137,7 @@ var sampleConfig = `
   ## Data format to consume.
   ## Each data format has its own unique set of configuration options, read
   ## more about them here:
-  ## https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md
+  ## https://gitee.com/zhimiao/qiansi-telegraf/blob/master/docs/DATA_FORMATS_INPUT.md
   data_format = "influx"
 `
 

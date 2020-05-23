@@ -8,8 +8,8 @@ import (
 	"net"
 	"net/url"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/plugins/serializers/influx"
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/serializers/influx"
 )
 
 const (

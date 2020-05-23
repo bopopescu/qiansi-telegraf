@@ -1,7 +1,7 @@
 package infiniband
 
 import (
-	"github.com/influxdata/telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf"
 )
 
 // Stores the configuration values for the infiniband plugin - as there are no

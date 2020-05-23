@@ -3,7 +3,7 @@ package docker_test
 import (
 	"testing"
 
-	"github.com/influxdata/telegraf/internal/docker"
+	"gitee.com/zhimiao/qiansi-telegraf/internal/docker"
 	"github.com/stretchr/testify/require"
 )
 

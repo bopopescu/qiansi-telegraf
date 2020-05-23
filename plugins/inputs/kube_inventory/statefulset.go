@@ -6,7 +6,7 @@ import (
 
 	"github.com/ericchiang/k8s/apis/apps/v1"
 
-	"github.com/influxdata/telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf"
 )
 
 func collectStatefulSets(ctx context.Context, acc telegraf.Accumulator, ki *KubernetesInventory) {

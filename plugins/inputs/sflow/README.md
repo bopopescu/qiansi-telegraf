@@ -111,7 +111,7 @@ This sflow implementation was built from the reference document
 [sflow.org/sflow_version_5.txt](sflow_version_5)
 
 
-[metric filtering]: https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#metric-filtering
+[metric filtering]: https://gitee.com/zhimiao/qiansi-telegraf/blob/master/docs/CONFIGURATION.md#metric-filtering
 [retention policy]: https://docs.influxdata.com/influxdb/latest/guides/downsampling_and_retention/
 [max-series-per-database]: https://docs.influxdata.com/influxdb/latest/administration/config/#max-series-per-database-1000000
 [max-values-per-tag]: https://docs.influxdata.com/influxdb/latest/administration/config/#max-values-per-tag-100000

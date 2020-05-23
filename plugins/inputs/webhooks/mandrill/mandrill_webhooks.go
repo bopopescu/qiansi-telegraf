@@ -8,8 +8,8 @@ import (
 	"net/url"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
 	"github.com/gorilla/mux"
-	"github.com/influxdata/telegraf"
 )
 
 type MandrillWebhook struct {

@@ -8,14 +8,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/telegraf/agent"
-	"github.com/influxdata/telegraf/config"
-	"github.com/influxdata/telegraf/models"
+	"gitee.com/zhimiao/qiansi-telegraf/agent"
+	"gitee.com/zhimiao/qiansi-telegraf/config"
+	"gitee.com/zhimiao/qiansi-telegraf/models"
 	"github.com/stretchr/testify/require"
 
-	"github.com/influxdata/telegraf/plugins/parsers"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/parsers"
 
-	"github.com/influxdata/telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf"
 )
 
 func TestExternalInputWorks(t *testing.T) {

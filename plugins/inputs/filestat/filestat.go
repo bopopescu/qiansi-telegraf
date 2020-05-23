@@ -6,9 +6,9 @@ import (
 	"io"
 	"os"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/internal/globpath"
-	"github.com/influxdata/telegraf/plugins/inputs"
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/internal/globpath"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs"
 )
 
 const sampleConfig = `

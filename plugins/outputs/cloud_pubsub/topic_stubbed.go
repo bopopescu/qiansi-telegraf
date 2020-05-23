@@ -11,10 +11,10 @@ import (
 
 	"cloud.google.com/go/pubsub"
 	"encoding/base64"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/internal"
-	"github.com/influxdata/telegraf/plugins/parsers"
-	"github.com/influxdata/telegraf/plugins/serializers"
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/internal"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/parsers"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/serializers"
 	"google.golang.org/api/support/bundler"
 )
 

@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/influxdata/telegraf/plugins/inputs/zipkin/codec"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs/zipkin/codec"
 	"github.com/openzipkin/zipkin-go-opentracing/thrift/gen-go/zipkincore"
 )
 

@@ -5,9 +5,9 @@ import (
 	"math"
 	"strconv"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/filter"
-	"github.com/influxdata/telegraf/plugins/processors"
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/filter"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/processors"
 )
 
 var sampleConfig = `

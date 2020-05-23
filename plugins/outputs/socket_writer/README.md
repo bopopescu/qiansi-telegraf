@@ -2,7 +2,7 @@
 
 The socket_writer plugin can write to a UDP, TCP, or unix socket.
 
-It can output data in any of the [supported output formats](https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_OUTPUT.md).
+It can output data in any of the [supported output formats](https://gitee.com/zhimiao/qiansi-telegraf/blob/master/docs/DATA_FORMATS_OUTPUT.md).
 
 ```toml
 # Generic socket writer capable of handling multiple socket types.
@@ -40,6 +40,6 @@ It can output data in any of the [supported output formats](https://github.com/i
   ## Data format to generate.
   ## Each data format has its own unique set of configuration options, read
   ## more about them here:
-  ## https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md
+  ## https://gitee.com/zhimiao/qiansi-telegraf/blob/master/docs/DATA_FORMATS_INPUT.md
   # data_format = "influx"
 ```

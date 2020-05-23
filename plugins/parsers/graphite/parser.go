@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/internal/templating"
-	"github.com/influxdata/telegraf/metric"
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/internal/templating"
+	"gitee.com/zhimiao/qiansi-telegraf/metric"
 )
 
 // Minimum and maximum supported dates for timestamps.

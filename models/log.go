@@ -4,7 +4,7 @@ import (
 	"log"
 	"reflect"
 
-	"github.com/influxdata/telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf"
 )
 
 // Logger defines a logging structure for plugins.

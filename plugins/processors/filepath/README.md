@@ -170,7 +170,7 @@ The effects of this function are only noticeable on Windows platforms, because o
 ### Processing paths from tail plugin
 
 This plugin can be used together with the
-[tail input plugn](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/tail) to make modifications
+[tail input plugn](https://gitee.com/zhimiao/qiansi-telegraf/tree/master/plugins/inputs/tail) to make modifications
 to the `path` tag injected for every file.
 
 Scenario:

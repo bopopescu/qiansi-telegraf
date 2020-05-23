@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
 	"github.com/gorilla/mux"
-	"github.com/influxdata/telegraf"
 )
 
 type event struct {

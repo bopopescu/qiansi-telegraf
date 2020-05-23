@@ -8,13 +8,13 @@ import (
 	"strconv"
 	"strings"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/internal"
+	framing "gitee.com/zhimiao/qiansi-telegraf/internal/syslog"
+	tlsint "gitee.com/zhimiao/qiansi-telegraf/internal/tls"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/outputs"
 	"github.com/influxdata/go-syslog/v2/nontransparent"
 	"github.com/influxdata/go-syslog/v2/rfc5424"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/internal"
-	framing "github.com/influxdata/telegraf/internal/syslog"
-	tlsint "github.com/influxdata/telegraf/internal/tls"
-	"github.com/influxdata/telegraf/plugins/outputs"
 )
 
 type Syslog struct {

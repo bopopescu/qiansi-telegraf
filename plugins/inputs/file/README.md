@@ -17,7 +17,7 @@ plugin instead.
   ## Data format to consume.
   ## Each data format has its own unique set of configuration options, read
   ## more about them here:
-  ## https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md
+  ## https://gitee.com/zhimiao/qiansi-telegraf/blob/master/docs/DATA_FORMATS_INPUT.md
   data_format = "influx"
 
   ## Name a tag containing the name of the file the data was parsed from.  Leave empty

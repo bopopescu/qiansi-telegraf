@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
 	"github.com/gogo/protobuf/proto"
-	"github.com/influxdata/telegraf"
 	dto "github.com/prometheus/client_model/go"
 )
 

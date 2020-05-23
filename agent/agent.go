@@ -9,11 +9,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/config"
-	"github.com/influxdata/telegraf/internal"
-	"github.com/influxdata/telegraf/models"
-	"github.com/influxdata/telegraf/plugins/serializers/influx"
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/config"
+	"gitee.com/zhimiao/qiansi-telegraf/internal"
+	"gitee.com/zhimiao/qiansi-telegraf/models"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/serializers/influx"
 )
 
 // Agent runs a set of plugins.
@@ -737,6 +737,6 @@ func panicRecover(input *models.RunningInput) {
 			input.LogName(), err, trace)
 		log.Println("E! PLEASE REPORT THIS PANIC ON GITHUB with " +
 			"stack trace, configuration, and OS information: " +
-			"https://github.com/influxdata/telegraf/issues/new/choose")
+			"https://gitee.com/zhimiao/qiansi-telegraf/issues/new/choose")
 	}
 }

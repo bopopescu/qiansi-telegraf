@@ -8,10 +8,10 @@ import (
 	"net/http"
 	"strings"
 
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs/zipkin/codec"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs/zipkin/codec/jsonV1"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs/zipkin/codec/thrift"
 	"github.com/gorilla/mux"
-	"github.com/influxdata/telegraf/plugins/inputs/zipkin/codec"
-	"github.com/influxdata/telegraf/plugins/inputs/zipkin/codec/jsonV1"
-	"github.com/influxdata/telegraf/plugins/inputs/zipkin/codec/thrift"
 )
 
 // SpanHandler is an implementation of a Handler which accepts zipkin thrift

@@ -9,8 +9,8 @@ import (
 	"log"
 	"net/http"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
 	"github.com/gorilla/mux"
-	"github.com/influxdata/telegraf"
 )
 
 type GithubWebhook struct {

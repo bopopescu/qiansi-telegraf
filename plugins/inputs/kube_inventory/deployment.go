@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
 	v1 "github.com/ericchiang/k8s/apis/apps/v1"
-	"github.com/influxdata/telegraf"
 )
 
 func collectDeployments(ctx context.Context, acc telegraf.Accumulator, ki *KubernetesInventory) {

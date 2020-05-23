@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/testutil"
 	"github.com/gogo/protobuf/proto"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/testutil"
 	dto "github.com/prometheus/client_model/go"
 	"github.com/stretchr/testify/require"
 )

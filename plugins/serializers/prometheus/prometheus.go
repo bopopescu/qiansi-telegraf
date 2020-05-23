@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"time"
 
-	"github.com/influxdata/telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf"
 	"github.com/prometheus/common/expfmt"
 )
 

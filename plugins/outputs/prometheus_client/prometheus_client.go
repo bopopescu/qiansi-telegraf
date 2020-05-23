@@ -10,12 +10,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/internal"
-	tlsint "github.com/influxdata/telegraf/internal/tls"
-	"github.com/influxdata/telegraf/plugins/outputs"
-	"github.com/influxdata/telegraf/plugins/outputs/prometheus_client/v1"
-	"github.com/influxdata/telegraf/plugins/outputs/prometheus_client/v2"
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/internal"
+	tlsint "gitee.com/zhimiao/qiansi-telegraf/internal/tls"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/outputs"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/outputs/prometheus_client/v1"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/outputs/prometheus_client/v2"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )

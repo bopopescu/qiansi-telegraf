@@ -4,10 +4,10 @@ import (
 	"testing"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/parsers"
+	"gitee.com/zhimiao/qiansi-telegraf/testutil"
 	"github.com/eclipse/paho.mqtt.golang"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/plugins/parsers"
-	"github.com/influxdata/telegraf/testutil"
 	"github.com/stretchr/testify/require"
 )
 

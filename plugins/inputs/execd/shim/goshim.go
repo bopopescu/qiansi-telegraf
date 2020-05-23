@@ -13,11 +13,11 @@ import (
 	"syscall"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/agent"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/serializers/influx"
 	"github.com/BurntSushi/toml"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/agent"
-	"github.com/influxdata/telegraf/plugins/inputs"
-	"github.com/influxdata/telegraf/plugins/serializers/influx"
 )
 
 type empty struct{}

@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/telegraf"
-	influxdb "github.com/influxdata/telegraf/plugins/outputs/influxdb_v2"
-	"github.com/influxdata/telegraf/testutil"
+	"gitee.com/zhimiao/qiansi-telegraf"
+	influxdb "gitee.com/zhimiao/qiansi-telegraf/plugins/outputs/influxdb_v2"
+	"gitee.com/zhimiao/qiansi-telegraf/testutil"
 	"github.com/stretchr/testify/require"
 )
 

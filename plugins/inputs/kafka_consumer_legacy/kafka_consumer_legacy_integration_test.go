@@ -5,12 +5,12 @@ import (
 	"testing"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf/testutil"
 	"github.com/Shopify/sarama"
-	"github.com/influxdata/telegraf/testutil"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/influxdata/telegraf/plugins/parsers"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/parsers"
 )
 
 func TestReadsMetricsFromKafka(t *testing.T) {

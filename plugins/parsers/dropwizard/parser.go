@@ -7,10 +7,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/internal/templating"
-	"github.com/influxdata/telegraf/metric"
-	"github.com/influxdata/telegraf/plugins/parsers/influx"
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/internal/templating"
+	"gitee.com/zhimiao/qiansi-telegraf/metric"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/parsers/influx"
 	"github.com/tidwall/gjson"
 )
 

@@ -9,12 +9,12 @@ import (
 	"sync"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/internal/tls"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs/mysql/v1"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs/mysql/v2"
 	"github.com/go-sql-driver/mysql"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/internal/tls"
-	"github.com/influxdata/telegraf/plugins/inputs"
-	"github.com/influxdata/telegraf/plugins/inputs/mysql/v1"
-	"github.com/influxdata/telegraf/plugins/inputs/mysql/v2"
 )
 
 type Mysql struct {

@@ -3,7 +3,7 @@ package ethtool
 import (
 	"net"
 
-	"github.com/influxdata/telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf"
 )
 
 type Command interface {

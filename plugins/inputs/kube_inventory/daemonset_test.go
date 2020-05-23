@@ -7,7 +7,7 @@ import (
 	"github.com/ericchiang/k8s/apis/apps/v1"
 	metav1 "github.com/ericchiang/k8s/apis/meta/v1"
 
-	"github.com/influxdata/telegraf/testutil"
+	"gitee.com/zhimiao/qiansi-telegraf/testutil"
 )
 
 func TestDaemonSet(t *testing.T) {

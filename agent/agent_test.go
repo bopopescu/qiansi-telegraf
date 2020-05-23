@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/telegraf/config"
-	_ "github.com/influxdata/telegraf/plugins/inputs/all"
-	_ "github.com/influxdata/telegraf/plugins/outputs/all"
+	"gitee.com/zhimiao/qiansi-telegraf/config"
+	_ "gitee.com/zhimiao/qiansi-telegraf/plugins/inputs/all"
+	_ "gitee.com/zhimiao/qiansi-telegraf/plugins/outputs/all"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

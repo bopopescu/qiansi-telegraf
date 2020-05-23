@@ -4,11 +4,11 @@ import (
 	"testing"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/metric"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/serializers"
+	"gitee.com/zhimiao/qiansi-telegraf/testutil"
 	"github.com/Shopify/sarama"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/metric"
-	"github.com/influxdata/telegraf/plugins/serializers"
-	"github.com/influxdata/telegraf/testutil"
 	"github.com/stretchr/testify/require"
 )
 

@@ -6,10 +6,10 @@ import (
 	"sync"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs"
 	"github.com/aristanetworks/goarista/lanz"
 	pb "github.com/aristanetworks/goarista/lanz/proto"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/plugins/inputs"
 )
 
 var sampleConfig = `

@@ -4,8 +4,8 @@ import (
 	"syscall"
 	"testing"
 
-	"github.com/influxdata/telegraf/plugins/inputs/system"
-	"github.com/influxdata/telegraf/testutil"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs/system"
+	"gitee.com/zhimiao/qiansi-telegraf/testutil"
 	"github.com/shirou/gopsutil/net"
 	"github.com/stretchr/testify/require"
 )

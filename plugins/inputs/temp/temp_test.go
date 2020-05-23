@@ -6,8 +6,8 @@ import (
 	"github.com/shirou/gopsutil/host"
 	"github.com/stretchr/testify/require"
 
-	"github.com/influxdata/telegraf/plugins/inputs/system"
-	"github.com/influxdata/telegraf/testutil"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs/system"
+	"gitee.com/zhimiao/qiansi-telegraf/testutil"
 )
 
 func TestTemperature(t *testing.T) {

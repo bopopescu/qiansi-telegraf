@@ -12,13 +12,13 @@ import (
 	"sync"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
+	internaltls "gitee.com/zhimiao/qiansi-telegraf/internal/tls"
+	"gitee.com/zhimiao/qiansi-telegraf/metric"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs"
 	dialout "github.com/cisco-ie/nx-telemetry-proto/mdt_dialout"
 	telemetry "github.com/cisco-ie/nx-telemetry-proto/telemetry_bis"
 	"github.com/golang/protobuf/proto"
-	"github.com/influxdata/telegraf"
-	internaltls "github.com/influxdata/telegraf/internal/tls"
-	"github.com/influxdata/telegraf/metric"
-	"github.com/influxdata/telegraf/plugins/inputs"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials" // Register GRPC gzip decoder to support compressed telemetry
 	_ "google.golang.org/grpc/encoding/gzip"

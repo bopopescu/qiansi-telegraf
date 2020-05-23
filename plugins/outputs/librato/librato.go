@@ -9,10 +9,10 @@ import (
 	"net/http"
 	"regexp"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/internal"
-	"github.com/influxdata/telegraf/plugins/outputs"
-	"github.com/influxdata/telegraf/plugins/serializers/graphite"
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/internal"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/outputs"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/serializers/graphite"
 )
 
 // Librato structure for configuration and client
@@ -43,7 +43,7 @@ var sampleConfig = `
   ## Connection timeout.
   # timeout = "5s"
   ## Output source Template (same as graphite buckets)
-  ## see https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_OUTPUT.md#graphite
+  ## see https://gitee.com/zhimiao/qiansi-telegraf/blob/master/docs/DATA_FORMATS_OUTPUT.md#graphite
   ## This template is used in librato's source (not metric's name)
   template = "host"
 

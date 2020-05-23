@@ -3,8 +3,8 @@
 package infiniband
 
 import (
+	"gitee.com/zhimiao/qiansi-telegraf/testutil"
 	"github.com/Mellanox/rdmamap"
-	"github.com/influxdata/telegraf/testutil"
 	"testing"
 )
 

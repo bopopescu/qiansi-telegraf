@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
 	"github.com/influxdata/go-syslog/v2/rfc5424"
-	"github.com/influxdata/telegraf"
 )
 
 type SyslogMapper struct {

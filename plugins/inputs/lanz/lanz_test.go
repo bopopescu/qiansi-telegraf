@@ -5,9 +5,9 @@ import (
 	"strconv"
 	"testing"
 
+	"gitee.com/zhimiao/qiansi-telegraf/testutil"
 	pb "github.com/aristanetworks/goarista/lanz/proto"
 	"github.com/golang/protobuf/proto"
-	"github.com/influxdata/telegraf/testutil"
 )
 
 var testProtoBufCongestionRecord1 = &pb.LanzRecord{

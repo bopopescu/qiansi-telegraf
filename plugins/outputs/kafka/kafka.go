@@ -7,13 +7,13 @@ import (
 	"strings"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
+	tlsint "gitee.com/zhimiao/qiansi-telegraf/internal/tls"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/common/kafka"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/outputs"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/serializers"
 	"github.com/Shopify/sarama"
 	"github.com/gofrs/uuid"
-	"github.com/influxdata/telegraf"
-	tlsint "github.com/influxdata/telegraf/internal/tls"
-	"github.com/influxdata/telegraf/plugins/common/kafka"
-	"github.com/influxdata/telegraf/plugins/outputs"
-	"github.com/influxdata/telegraf/plugins/serializers"
 )
 
 var ValidTopicSuffixMethods = []string{
@@ -210,7 +210,7 @@ var sampleConfig = `
   ## Data format to output.
   ## Each data format has its own unique set of configuration options, read
   ## more about them here:
-  ## https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_OUTPUT.md
+  ## https://gitee.com/zhimiao/qiansi-telegraf/blob/master/docs/DATA_FORMATS_OUTPUT.md
   # data_format = "influx"
 `
 

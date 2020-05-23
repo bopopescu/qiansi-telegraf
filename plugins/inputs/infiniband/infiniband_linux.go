@@ -4,9 +4,9 @@ package infiniband
 
 import (
 	"fmt"
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs"
 	"github.com/Mellanox/rdmamap"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/plugins/inputs"
 	"strconv"
 )
 

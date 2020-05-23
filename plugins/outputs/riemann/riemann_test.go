@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf/metric"
 	"github.com/amir/raidman"
-	"github.com/influxdata/telegraf/metric"
 	"github.com/stretchr/testify/require"
 )
 

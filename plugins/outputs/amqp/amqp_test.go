@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/telegraf/internal"
+	"gitee.com/zhimiao/qiansi-telegraf/internal"
 	"github.com/streadway/amqp"
 	"github.com/stretchr/testify/require"
 )

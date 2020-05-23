@@ -5,9 +5,9 @@ import (
 	"strings"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs/docker"
 	"github.com/docker/docker/api/types"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/plugins/inputs/docker"
 )
 
 func parseContainerStats(c Container, acc telegraf.Accumulator, tags map[string]string) {

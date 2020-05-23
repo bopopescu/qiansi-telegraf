@@ -4,9 +4,9 @@ import (
 	"regexp"
 	"sync"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs"
 	couchbase "github.com/couchbase/go-couchbase"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/plugins/inputs"
 )
 
 type Couchbase struct {

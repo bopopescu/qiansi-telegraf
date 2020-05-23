@@ -3,9 +3,9 @@ package geo
 import (
 	"fmt"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/processors"
 	"github.com/golang/geo/s2"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/plugins/processors"
 )
 
 type Geo struct {

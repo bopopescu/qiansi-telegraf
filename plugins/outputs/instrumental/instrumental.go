@@ -9,11 +9,11 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/internal"
-	"github.com/influxdata/telegraf/plugins/outputs"
-	"github.com/influxdata/telegraf/plugins/serializers"
-	"github.com/influxdata/telegraf/plugins/serializers/graphite"
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/internal"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/outputs"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/serializers"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/serializers/graphite"
 )
 
 var (
@@ -47,7 +47,7 @@ var sampleConfig = `
   ## Prefix the metrics with a given name
   prefix = ""
   ## Stats output template (Graphite formatting)
-  ## see https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_OUTPUT.md#graphite
+  ## see https://gitee.com/zhimiao/qiansi-telegraf/blob/master/docs/DATA_FORMATS_OUTPUT.md#graphite
   template = "host.tags.measurement.field"
   ## Timeout in seconds to connect
   timeout = "2s"

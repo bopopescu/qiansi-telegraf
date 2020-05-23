@@ -12,15 +12,15 @@ import (
 	"time"
 	"unicode"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/internal"
+	framing "gitee.com/zhimiao/qiansi-telegraf/internal/syslog"
+	tlsConfig "gitee.com/zhimiao/qiansi-telegraf/internal/tls"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs"
 	"github.com/influxdata/go-syslog/v2"
 	"github.com/influxdata/go-syslog/v2/nontransparent"
 	"github.com/influxdata/go-syslog/v2/octetcounting"
 	"github.com/influxdata/go-syslog/v2/rfc5424"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/internal"
-	framing "github.com/influxdata/telegraf/internal/syslog"
-	tlsConfig "github.com/influxdata/telegraf/internal/tls"
-	"github.com/influxdata/telegraf/plugins/inputs"
 )
 
 const defaultReadTimeout = time.Second * 5

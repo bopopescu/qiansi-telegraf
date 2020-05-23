@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
+	"gitee.com/zhimiao/qiansi-telegraf/internal/tls"
 	"github.com/ericchiang/k8s/util/intstr"
-	"github.com/influxdata/telegraf/internal/tls"
 )
 
 type mockHandler struct {

@@ -6,9 +6,9 @@ import (
 	"net"
 	"sync"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/filter"
-	"github.com/influxdata/telegraf/plugins/inputs"
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/filter"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs"
 	"github.com/pkg/errors"
 	"github.com/safchain/ethtool"
 )

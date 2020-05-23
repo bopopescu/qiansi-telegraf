@@ -3,8 +3,8 @@ package consul
 import (
 	"testing"
 
+	"gitee.com/zhimiao/qiansi-telegraf/testutil"
 	"github.com/hashicorp/consul/api"
-	"github.com/influxdata/telegraf/testutil"
 )
 
 var sampleChecks = []*api.HealthCheck{

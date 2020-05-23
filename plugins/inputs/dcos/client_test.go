@@ -8,8 +8,8 @@ import (
 	"net/url"
 	"testing"
 
+	"gitee.com/zhimiao/qiansi-telegraf/testutil"
 	jwt "github.com/dgrijalva/jwt-go"
-	"github.com/influxdata/telegraf/testutil"
 	"github.com/stretchr/testify/require"
 )
 

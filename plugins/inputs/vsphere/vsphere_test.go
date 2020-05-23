@@ -9,9 +9,9 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/influxdata/telegraf/internal"
-	itls "github.com/influxdata/telegraf/internal/tls"
-	"github.com/influxdata/telegraf/testutil"
+	"gitee.com/zhimiao/qiansi-telegraf/internal"
+	itls "gitee.com/zhimiao/qiansi-telegraf/internal/tls"
+	"gitee.com/zhimiao/qiansi-telegraf/testutil"
 	"github.com/influxdata/toml"
 	"github.com/stretchr/testify/require"
 	"github.com/vmware/govmomi/object"

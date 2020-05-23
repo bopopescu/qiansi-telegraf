@@ -8,10 +8,10 @@ import (
 	"strconv"
 	"syscall"
 
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/common/logrus"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs"
 	"github.com/docker/libnetwork/ipvs"
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/plugins/common/logrus"
-	"github.com/influxdata/telegraf/plugins/inputs"
 )
 
 // IPVS holds the state for this input plugin

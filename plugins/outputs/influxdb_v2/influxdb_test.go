@@ -3,9 +3,9 @@ package influxdb_v2_test
 import (
 	"testing"
 
-	"github.com/influxdata/telegraf/internal/tls"
-	"github.com/influxdata/telegraf/plugins/outputs"
-	influxdb "github.com/influxdata/telegraf/plugins/outputs/influxdb_v2"
+	"gitee.com/zhimiao/qiansi-telegraf/internal/tls"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/outputs"
+	influxdb "gitee.com/zhimiao/qiansi-telegraf/plugins/outputs/influxdb_v2"
 	"github.com/stretchr/testify/require"
 )
 

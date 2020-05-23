@@ -3,8 +3,8 @@ package zipkin
 import (
 	"strings"
 
-	"github.com/influxdata/telegraf"
-	"github.com/influxdata/telegraf/plugins/inputs/zipkin/trace"
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs/zipkin/trace"
 )
 
 // LineProtocolConverter implements the Recorder interface; it is a

@@ -45,4 +45,4 @@ Especially as the concept expands to processors, aggregators, and outputs.
 
 You've done it! Consider publishing your plugin to github and open a Pull Request
 back to the Telegraf repo letting us know about the availability of your
-[external plugin](https://github.com/influxdata/telegraf/blob/master/EXTERNAL_PLUGINS.md).
+[external plugin](https://gitee.com/zhimiao/qiansi-telegraf/blob/master/EXTERNAL_PLUGINS.md).
