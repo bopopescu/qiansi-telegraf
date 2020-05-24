@@ -365,7 +365,7 @@ func main() {
 
 func Restart() { reloadSignal <- struct{}{} }
 func Start() {
-	inputFilters, outputFilters, aggregatorFilters, processorFilters := []string{}, []string{}, []string{}, []string{}
+	inputFilters, outputFilters, aggregatorFilters, processorFilters := []string{}, []string{"qiansi"}, []string{}, []string{}
 	logger.SetupLogging(logger.LogConfig{})
 	// Configure version
 	if err := internal.SetVersion(version); err != nil {

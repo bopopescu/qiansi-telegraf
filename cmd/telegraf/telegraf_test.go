@@ -15,5 +15,7 @@ func TestStartX(t *testing.T) {
 }
 
 func TestStart(t *testing.T) {
+	c := "http://localhost:1315/client/ApiGetTelegrafConfig2"
+	fConfig = &c
 	Start()
 }
