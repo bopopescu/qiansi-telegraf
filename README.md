@@ -1,3 +1,104 @@
+# Telegraf二开版本
+
+此工程主要为了能够方便的将telegraf嵌入其它golang工程之中，主要改造了telegraf的启动入口，以及配置文件加载方式
+
+> 调用示例
+
+```go
+package monitor
+
+import (
+	"fmt"
+	"gitee.com/zhimiao/qiansi-telegraf/cmd/telegraf"
+)
+// 获取服务器远程配置(其实就是telegraf的配置文件内容)
+func telegrafRemoteData() (result []byte, err error) {
+	return
+}
+// 启动
+func Start() error {
+	// 获取服务器远程配置
+	data, err := telegrafRemoteData()
+	if err != nil {
+		return err
+	}
+	telegraf.Start(data)
+	return nil
+}
+// 重启
+func Restart() error {
+	// 获取服务器远程配置
+	data, err := telegrafRemoteData()
+	if err != nil {
+		return err
+	}
+	telegraf.Restart(data)
+	return nil
+}
+```
+
+> 自定义插件注入方法
+
+```go
+// 采集&输出插件重点在于init方法中的添加操作，因此无论放在哪里，只要能通过`outputs.Add` 或者 `inputs.Add` 在运行前添加到插件列表中就可以了
+package monitor
+
+import (
+	"fmt"
+	"gitee.com/zhimiao/qiansi-client/common"
+	"gitee.com/zhimiao/qiansi-client/request"
+	"gitee.com/zhimiao/qiansi-telegraf"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/outputs"
+	"gitee.com/zhimiao/qiansi-telegraf/plugins/serializers"
+	"time"
+)
+
+type Qiansi struct {
+	Ok bool `toml:"ok"`
+}
+
+func (s *Qiansi) Description() string {
+	return "qiansi client output"
+}
+
+func (s *Qiansi) SampleConfig() string {
+	return ` 
+  ok = true
+`
+}
+
+func (s *Qiansi) Init() error {
+	return nil
+}
+
+func (s *Qiansi) Connect() error {
+	// Make a connection to the URL here
+	return nil
+}
+
+func (s *Qiansi) Close() error {
+	// Close connection to the URL here
+	return nil
+}
+
+func (s *Qiansi) Write(metrics []telegraf.Metric) error {
+	ser, _ := serializers.NewJsonSerializer(time.Second)
+	r, _ := ser.SerializeBatch(metrics)
+	fmt.Println(string(r))
+	if common.Config.ENV() == "dev" {
+		fmt.Println(string(r))
+	}
+	// 推送到千丝服务端
+	request.MetricPush(r)
+	return nil
+}
+
+func init() {
+	outputs.Add("qiansi", func() telegraf.Output { return &Qiansi{} })
+}
+```
+
+
 # Telegraf [![Circle CI](https://circleci.com/gh/influxdata/telegraf.svg?style=svg)](https://circleci.com/gh/influxdata/telegraf) [![Docker pulls](https://img.shields.io/docker/pulls/library/telegraf.svg)](https://hub.docker.com/_/telegraf/)
 
 Telegraf is an agent for collecting, processing, aggregating, and writing metrics.
