@@ -124,14 +124,14 @@ func cpustats(id string, stats types.StatsJSON, acc telegraf.Accumulator, tags m
 
 	// If we have OnlineCPUs field, then use it to restrict stats gathering to only Online CPUs
 	// (https://github.com/moby/moby/commit/115f91d7575d6de6c7781a96a082f144fd17e400)
-	var percpuusage []uint64
+	/*var percpuusage []uint64
 	if stats.CPUStats.OnlineCPUs > 0 {
 		percpuusage = stats.CPUStats.CPUUsage.PercpuUsage[:stats.CPUStats.OnlineCPUs]
 	} else {
 		percpuusage = stats.CPUStats.CPUUsage.PercpuUsage
-	}
+	}*/
 
-	for i, percpu := range percpuusage {
+	for i, percpu := range stats.CPUStats.CPUUsage.PercpuUsage {
 		percputags := copyTags(tags)
 		percputags["cpu"] = fmt.Sprintf("cpu%d", i)
 		fields := map[string]interface{}{

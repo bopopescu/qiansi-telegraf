@@ -1,4 +1,4 @@
-package main
+package telegraf
 
 import (
 	"context"
@@ -6,12 +6,10 @@ import (
 	"flag"
 	"fmt"
 	"log"
-	"net/http"
 	_ "net/http/pprof" // Comment this line to disable pprof endpoint.
 	"os"
 	"os/signal"
 	"runtime"
-	"sort"
 	"strings"
 	"syscall"
 	"time"
@@ -19,12 +17,9 @@ import (
 	"gitee.com/zhimiao/qiansi-telegraf/agent"
 	"gitee.com/zhimiao/qiansi-telegraf/config"
 	"gitee.com/zhimiao/qiansi-telegraf/internal"
-	"gitee.com/zhimiao/qiansi-telegraf/internal/goplugin"
 	"gitee.com/zhimiao/qiansi-telegraf/logger"
 	_ "gitee.com/zhimiao/qiansi-telegraf/plugins/aggregators/all"
-	"gitee.com/zhimiao/qiansi-telegraf/plugins/inputs"
 	_ "gitee.com/zhimiao/qiansi-telegraf/plugins/inputs/all"
-	"gitee.com/zhimiao/qiansi-telegraf/plugins/outputs"
 	_ "gitee.com/zhimiao/qiansi-telegraf/plugins/outputs/all"
 	_ "gitee.com/zhimiao/qiansi-telegraf/plugins/processors/all"
 )
@@ -119,18 +114,21 @@ func reloadLoop(
 func runAgent(ctx context.Context,
 	inputFilters []string,
 	outputFilters []string,
-) error {
+) (err error) {
 	log.Printf("I! Starting Telegraf %s", version)
 
 	// If no other options are specified, load the config file and run.
 	c := config.NewConfig()
 	c.OutputFilters = outputFilters
 	c.InputFilters = inputFilters
-	err := c.LoadConfig(*fConfig)
+	if len(configData) > 0 {
+		err = c.LoadConfigByData(configData)
+	} else {
+		err = c.LoadConfigByPath(*fConfig)
+	}
 	if err != nil {
 		return err
 	}
-
 	if *fConfigDirectory != "" {
 		err = c.LoadDirectory(*fConfigDirectory)
 		if err != nil {
@@ -204,168 +202,15 @@ func runAgent(ctx context.Context,
 	return ag.Run(ctx)
 }
 
-func usageExit(rc int) {
-	fmt.Println(internal.Usage)
-	os.Exit(rc)
+var configData []byte
+
+func Restart(config []byte) {
+	configData = config
+	reloadSignal <- struct{}{}
 }
-
-func formatFullVersion() string {
-	var parts = []string{"Telegraf"}
-
-	if version != "" {
-		parts = append(parts, version)
-	} else {
-		parts = append(parts, "unknown")
-	}
-
-	if branch != "" || commit != "" {
-		if branch == "" {
-			branch = "unknown"
-		}
-		if commit == "" {
-			commit = "unknown"
-		}
-		git := fmt.Sprintf("(git: %s %s)", branch, commit)
-		parts = append(parts, git)
-	}
-
-	return strings.Join(parts, " ")
-}
-
-func main() {
-	flag.Usage = func() { usageExit(0) }
-	flag.Parse()
-	args := flag.Args()
-
-	sectionFilters, inputFilters, outputFilters := []string{}, []string{}, []string{}
-	if *fSectionFilters != "" {
-		sectionFilters = strings.Split(":"+strings.TrimSpace(*fSectionFilters)+":", ":")
-	}
-	if *fInputFilters != "" {
-		inputFilters = strings.Split(":"+strings.TrimSpace(*fInputFilters)+":", ":")
-	}
-	if *fOutputFilters != "" {
-		outputFilters = strings.Split(":"+strings.TrimSpace(*fOutputFilters)+":", ":")
-	}
-
-	aggregatorFilters, processorFilters := []string{}, []string{}
-	if *fAggregatorFilters != "" {
-		aggregatorFilters = strings.Split(":"+strings.TrimSpace(*fAggregatorFilters)+":", ":")
-	}
-	if *fProcessorFilters != "" {
-		processorFilters = strings.Split(":"+strings.TrimSpace(*fProcessorFilters)+":", ":")
-	}
-
-	logger.SetupLogging(logger.LogConfig{})
-
-	// Load external plugins, if requested.
-	if *fPlugins != "" {
-		log.Printf("I! Loading external plugins from: %s", *fPlugins)
-		if err := goplugin.LoadExternalPlugins(*fPlugins); err != nil {
-			log.Fatal("E! " + err.Error())
-		}
-	}
-
-	if *pprofAddr != "" {
-		go func() {
-			pprofHostPort := *pprofAddr
-			parts := strings.Split(pprofHostPort, ":")
-			if len(parts) == 2 && parts[0] == "" {
-				pprofHostPort = fmt.Sprintf("localhost:%s", parts[1])
-			}
-			pprofHostPort = "http://" + pprofHostPort + "/debug/pprof"
-
-			log.Printf("I! Starting pprof HTTP server at: %s", pprofHostPort)
-
-			if err := http.ListenAndServe(*pprofAddr, nil); err != nil {
-				log.Fatal("E! " + err.Error())
-			}
-		}()
-	}
-
-	if len(args) > 0 {
-		switch args[0] {
-		case "version":
-			fmt.Println(formatFullVersion())
-			return
-		case "config":
-			config.PrintSampleConfig(
-				sectionFilters,
-				inputFilters,
-				outputFilters,
-				aggregatorFilters,
-				processorFilters,
-			)
-			return
-		}
-	}
-
-	// switch for flags which just do something and exit immediately
-	switch {
-	case *fOutputList:
-		fmt.Println("Available Output Plugins: ")
-		names := make([]string, 0, len(outputs.Outputs))
-		for k := range outputs.Outputs {
-			names = append(names, k)
-		}
-		sort.Strings(names)
-		for _, k := range names {
-			fmt.Printf("  %s\n", k)
-		}
-		return
-	case *fInputList:
-		fmt.Println("Available Input Plugins:")
-		names := make([]string, 0, len(inputs.Inputs))
-		for k := range inputs.Inputs {
-			names = append(names, k)
-		}
-		sort.Strings(names)
-		for _, k := range names {
-			fmt.Printf("  %s\n", k)
-		}
-		return
-	case *fVersion:
-		fmt.Println(formatFullVersion())
-		return
-	case *fSampleConfig:
-		config.PrintSampleConfig(
-			sectionFilters,
-			inputFilters,
-			outputFilters,
-			aggregatorFilters,
-			processorFilters,
-		)
-		return
-	case *fUsage != "":
-		err := config.PrintInputConfig(*fUsage)
-		err2 := config.PrintOutputConfig(*fUsage)
-		if err != nil && err2 != nil {
-			log.Fatalf("E! %s and %s", err, err2)
-		}
-		return
-	}
-
-	shortVersion := version
-	if shortVersion == "" {
-		shortVersion = "unknown"
-	}
-
-	// Configure version
-	if err := internal.SetVersion(shortVersion); err != nil {
-		log.Println("Telegraf version already configured to: " + internal.Version())
-	}
-
-	run(
-		inputFilters,
-		outputFilters,
-		aggregatorFilters,
-		processorFilters,
-	)
-}
-
-func Restart() { reloadSignal <- struct{}{} }
-func Start() {
-	inputFilters, outputFilters, aggregatorFilters, processorFilters := []string{}, []string{"qiansi"}, []string{}, []string{}
+func Start(config []byte) {
+	configData = config
+	inputFilters, outputFilters, aggregatorFilters, processorFilters := []string{}, []string{}, []string{}, []string{}
 	logger.SetupLogging(logger.LogConfig{})
 	// Configure version
 	if err := internal.SetVersion(version); err != nil {

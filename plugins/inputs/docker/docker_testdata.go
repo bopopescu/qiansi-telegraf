@@ -352,7 +352,7 @@ func testStats() *types.StatsJSON {
 	stats := &types.StatsJSON{}
 	stats.Read = time.Now()
 	stats.Networks = make(map[string]types.NetworkStats)
-	stats.CPUStats.OnlineCPUs = 2
+	// stats.CPUStats = 2
 	stats.CPUStats.CPUUsage.PercpuUsage = []uint64{1, 1002, 0, 0}
 	stats.CPUStats.CPUUsage.UsageInUsermode = 100
 	stats.CPUStats.CPUUsage.TotalUsage = 500

@@ -637,7 +637,7 @@ func (c *Config) LoadDirectory(path string) error {
 		if len(name) < 6 || name[len(name)-5:] != ".conf" {
 			return nil
 		}
-		err := c.LoadConfig(thispath)
+		err := c.LoadConfigByPath(thispath)
 		if err != nil {
 			return err
 		}
@@ -675,7 +675,7 @@ func getDefaultConfigPath() (string, error) {
 }
 
 // LoadConfig loads the given config file and applies it to c
-func (c *Config) LoadConfig(path string) error {
+func (c *Config) LoadConfigByPath(path string) error {
 	var err error
 	if path == "" {
 		if path, err = getDefaultConfigPath(); err != nil {
@@ -686,12 +686,15 @@ func (c *Config) LoadConfig(path string) error {
 	if err != nil {
 		return fmt.Errorf("Error loading %s, %s", path, err)
 	}
+	return c.LoadConfigByData(data)
+}
 
+func (c *Config) LoadConfigByData(data []byte) (err error) {
+	path := ""
 	tbl, err := parseConfig(data)
 	if err != nil {
 		return fmt.Errorf("Error parsing %s, %s", path, err)
 	}
-
 	// Parse tags tables first:
 	for _, tableName := range []string{"tags", "global_tags"} {
 		if val, ok := tbl.Fields[tableName]; ok {

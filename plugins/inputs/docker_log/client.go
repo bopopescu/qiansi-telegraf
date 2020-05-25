@@ -23,7 +23,7 @@ type Client interface {
 }
 
 func NewEnvClient() (Client, error) {
-	client, err := docker.NewClientWithOpts(docker.FromEnv)
+	client, err := docker.NewEnvClient()
 	if err != nil {
 		return nil, err
 	}
@@ -35,12 +35,7 @@ func NewClient(host string, tlsConfig *tls.Config) (Client, error) {
 		TLSClientConfig: tlsConfig,
 	}
 	httpClient := &http.Client{Transport: transport}
-	client, err := docker.NewClientWithOpts(
-		docker.WithHTTPHeaders(defaultHeaders),
-		docker.WithHTTPClient(httpClient),
-		docker.WithVersion(version),
-		docker.WithHost(host))
-
+	client, err := docker.NewClient(host, version, httpClient, defaultHeaders)
 	if err != nil {
 		return nil, err
 	}

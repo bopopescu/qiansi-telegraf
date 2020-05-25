@@ -28,7 +28,6 @@ import (
 	_ "gitee.com/zhimiao/qiansi-telegraf/plugins/outputs/nsq"
 	_ "gitee.com/zhimiao/qiansi-telegraf/plugins/outputs/opentsdb"
 	_ "gitee.com/zhimiao/qiansi-telegraf/plugins/outputs/prometheus_client"
-	_ "gitee.com/zhimiao/qiansi-telegraf/plugins/outputs/qiansi"
 	_ "gitee.com/zhimiao/qiansi-telegraf/plugins/outputs/riemann"
 	_ "gitee.com/zhimiao/qiansi-telegraf/plugins/outputs/riemann_legacy"
 	_ "gitee.com/zhimiao/qiansi-telegraf/plugins/outputs/socket_writer"
